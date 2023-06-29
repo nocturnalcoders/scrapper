@@ -8,11 +8,10 @@
 
 <body>
     <canvas id="chart"></canvas>
-    <img src="web/sentiment_analysis.png" alt="Sentiment Analysis">
-    <img src="web/wordcloud.png" alt="Word Cloud">
+    <img src="{{ url_for('static', filename='web/sentiment_analysis.png') }}" alt="Sentiment Analysis">
+    <img src="{{ url_for('static', filename='web/wordcloud.png') }}" alt="Word Cloud">
     <script>
         // Ambil data grafik dari Flask menggunakan Jinja
-        var data = {{ chart_data | safe }};
 
         // Buat grafik menggunakan Chart.js
         var ctx = document.getElementById('chart').getContext('2d');
